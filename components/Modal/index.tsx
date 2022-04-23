@@ -1,14 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useContext } from 'react';
+import { NextRouter, useRouter } from 'next/router';
+import { ROUTES } from '../../config/route';
 import styles from '../../styles/Modal.module.scss';
 import { ModalContext } from '../../context/ModalContext';
 import { Play, Add, Like, Dislike } from '../../utils/icons';
 import Button from '../Button';
-import { Genre } from '../../types';
+import { Media, Genre } from '../../types';
 
 export default function Modal() {
+  const router: NextRouter = useRouter();
   const { modalData, setIsModal, isModal } = useContext(ModalContext);
   const { title, banner, rating, overview, genre } = modalData;
+
+  const onPlay = (data: Media) => {
+    router.push({
+      pathname: ROUTES.WATCH,
+      query: { videoId: data.id },
+    });
+  };
 
   return (
     <div className={styles.container} style={{ display: isModal ? 'flex' : 'none' }}>
@@ -19,7 +29,7 @@ export default function Modal() {
           <div className={styles.details}>
             <div className={styles.title}>{title}</div>
             <div className={styles.buttonRow}>
-              <Button label='Play' filled Icon={Play} />
+              <Button label='Play' filled Icon={Play} onClick={() => onPlay(modalData)} />
               <Button Icon={Add} rounded />
               <Button Icon={Like} rounded />
               <Button Icon={Dislike} rounded />

@@ -1,5 +1,5 @@
 export enum ROUTES {
   HOME = '/',
   BROWSE = '/browse',
-  LATEST = '/latest'
+  WATCH = '/watch/[videoId]',
 }

@@ -5488,6 +5488,14 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+videojs-react-enhanced@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/videojs-react-enhanced/-/videojs-react-enhanced-0.3.1.tgz#07b385d2317a9f1614c400c91dc7eb75378f3aac"
+  integrity sha512-JxU49PnEzoVLPUMJEUm/2fOYUk87IwP2J5IvNXJV5U8peKCHDeaT16qjLXQUD4G50CUjSJ/suyx1R90VYAU7fQ==
+  dependencies:
+    "@babel/runtime" "^7.11.2"
+    prop-types "^15.7.2"
+
 vm-browserify@1.1.2, vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"

@@ -17,7 +17,7 @@ export default function Browse(): React.ReactElement {
     <>
       {isModal && <Modal />}
       <Layout>
-        <Banner />
+        <Banner media={sections[0].movies[0]} />
         <div className={styles.contentContainer}>
           {sections.map((item, index) => {
             return (
