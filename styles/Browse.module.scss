@@ -12,3 +12,15 @@
     margin-left: 0.8rem;
   }
 }
+
+.dismissButton {
+  z-index: 99;
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+}
+
+.videoPlayer {
+  width: 100vw;
+  height: 100vh;
+}
