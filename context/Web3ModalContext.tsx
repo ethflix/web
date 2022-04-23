@@ -28,6 +28,7 @@ const Web3Provider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const w3m = new Web3Modal({
+      network: "rinkeby",
       cacheProvider: false,
       providerOptions: {
         injected: {
