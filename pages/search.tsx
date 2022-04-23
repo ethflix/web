@@ -5,7 +5,6 @@ const Layout = dynamic(import('../components/Layout'));
 export default function Search() {
     return (
         <Layout>
-            
         </Layout>
     )
 }

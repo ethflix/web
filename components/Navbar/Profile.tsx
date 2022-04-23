@@ -37,14 +37,16 @@ export default function Profile(): React.ReactElement {
   };
 
   return (
-    <div className={styles.profile} onMouseOver={onHover}>
-      <img src='../../assets/avatar.png' alt='user' className={styles.user} />
-      <motion.div {...caretAnimation}>
+    <div className={styles.profile}>
+      <a onClick={onSignout}>
+        <img src='../../assets/avatar.png' alt='user' className={styles.user} />
+      </a>
+      {/* <motion.div {...caretAnimation}>
         <CaretDown />
       </motion.div>
       <Dialog dialogRef={profileRef} onClose={onClose} classname={styles.signout} visible={visible}>
         <div onClick={onSignout}>Sign out</div>
-      </Dialog>
+      </Dialog> */}
     </div>
   );
 }

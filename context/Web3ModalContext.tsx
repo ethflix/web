@@ -28,7 +28,7 @@ const Web3Provider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const w3m = new Web3Modal({
-      cacheProvider: true,
+      cacheProvider: false,
       providerOptions: {
         injected: {
           display: {
