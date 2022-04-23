@@ -29,7 +29,7 @@ export default function Cards({ defaultCard = true, item }: CardsProps): React.R
   };
 
   return (
-    <div className={style}>
+    <div className={style} onClick={() => onClick(item)}>
       <Image src={`${poster}&ts=${Date.now()}`} width='420' height='190' alt='img' className={styles.cardPoster} />
       <div className={infoStyle}>
         <div className={styles.actionRow}>
@@ -43,7 +43,7 @@ export default function Cards({ defaultCard = true, item }: CardsProps): React.R
               </>
             )}
           </div>
-          <Button Icon={Down} rounded onClick={() => onClick(item)} />
+          <Button Icon={Down} rounded />
         </div>
         <div className={styles.textDetails}>
           <strong>{title}</strong>
