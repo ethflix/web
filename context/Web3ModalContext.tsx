@@ -64,25 +64,21 @@ const Web3Provider = ({ children }: { children: React.ReactNode }) => {
     const account = await signer.getAddress();
 
     _provider.on("accountsChanged", (accounts: string[]) => {
-      console.log('works');
       console.log(accounts);
     });
 
     // Subscribe to chainId change
     _provider.on("chainChanged", (chainId: number) => {
-      console.log('works 2');
       console.log(chainId);
     });
 
     // Subscribe to provider connection
     _provider.on("connect", (info: { chainId: number }) => {
-      console.log('works 3');
       console.log(info);
     });
 
     // Subscribe to provider disconnection
     _provider.on("disconnect", (error: { code: number; message: string }) => {
-      console.log('works 4');
       console.log(error);
     });
 
