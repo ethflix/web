@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useContext } from 'react';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 import { Genre, Media } from '../../types';
 import styles from '../../styles/Cards.module.scss';
@@ -29,7 +30,7 @@ export default function Cards({ defaultCard = true, item }: CardsProps): React.R
 
   return (
     <div className={style}>
-      <img src={image} alt='img' className={styles.cardPoster} />
+      <Image src={`${poster}&ts=${Date.now()}`} width='420' height='190' alt='img' className={styles.cardPoster} />
       <div className={infoStyle}>
         <div className={styles.actionRow}>
           <div className={styles.actionRow}>

@@ -12,27 +12,16 @@ interface ListProps {
   defaultCard?: boolean;
   heading: string;
   topList?: boolean;
-  endpoint: string;
+  movies: Media[];
 }
 
 export default function List({
   defaultCard = true,
   heading,
   topList = false,
-  endpoint
+  movies
 }: ListProps): React.ReactElement {
-  const [media, setMedia] = useState<Media[]>([]);
- 
-  async function getEndpoint() {
-    try {
-      const result = await axios.get(endpoint);
-      setMedia(result.data.data);
-    } catch (error) {}
-  }
-
-  useEffect(() => {
-    getEndpoint();
-  }, []);
+  const [media, setMedia] = useState<Media[]>(movies);
 
   return (
     <div className={styles.listContainer}>

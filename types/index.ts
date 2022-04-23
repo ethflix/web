@@ -26,7 +26,7 @@ export enum MediaType {
 }
 
 export type Media = {
-  id: number;
+  id: string;
   title: string;
   overview: string;
   poster: string;
@@ -39,7 +39,7 @@ export type ImageType = 'poster' | 'original';
 
 export type Section = {
   heading: string;
-  endpoint: string;
+  movies: Media[];
   defaultCard?: boolean;
   topList?: boolean;
 };

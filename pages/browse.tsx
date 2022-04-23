@@ -24,7 +24,7 @@ export default function Browse(): React.ReactElement {
               <List
                 key={index}
                 heading={item.heading}
-                endpoint={item.endpoint}
+                movies={item.movies}
                 defaultCard={item?.defaultCard}
                 topList={item?.topList}
               />
@@ -39,48 +39,828 @@ export default function Browse(): React.ReactElement {
 const sections: Section[] = [
   {
     heading: 'Popular on EthFlix',
-    endpoint: '/api/popular?type=tv'
+    movies: [
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: 'a566grl1x9i2ad0e',
+        title: 'Feeta - Hindi drama short film',
+        overview: "Feeta is a story of three siblings. An elder sister and two younger brothers. One day while getting ready for school, one of the brothers makes fun of the other that he doesn't know how to tie the shoelace and their sister listens to the whole conversation between them, then she teaches the lesson to the elder brother by comparing the shoelace with his relationship with others.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '965esrkarckkhbd9',
+        title: 'Realization - Hindi Drama Short Film',
+        overview: "On a day-to-day basis, we shy away from verbally sharing our love with our dads as we end up taking this relationship for granted. Then we spend our lives repenting for that one moment when we could have hugged them and told them how much we loved them.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '9a30rjdvt516mhzp',
+        title: 'Equation - Hindi Drama Short Film',
+        overview: "Prof. Raman Srinivasan writes a letter to Dr. PK Indurkar, a great mathematician, in the hope of getting an answer to an equation that he hasn't solved despite repeated attempts. In reality, there is a group of people who writes books in the name of Dr. PK Indurkar. No one exists with that name. Srinivasan has already sent a no. of emails and letters to the mathematician but in vain. Unable to answer all the letters, they publish a public obituary stating the demise of Dr. PK Indurkar.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      }
+    ]
   },
   {
     heading: 'Horror Movies',
-    endpoint: '/api/discover?type=movie&genre=27'
+    movies: [
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: 'a566grl1x9i2ad0e',
+        title: 'Feeta - Hindi drama short film',
+        overview: "Feeta is a story of three siblings. An elder sister and two younger brothers. One day while getting ready for school, one of the brothers makes fun of the other that he doesn't know how to tie the shoelace and their sister listens to the whole conversation between them, then she teaches the lesson to the elder brother by comparing the shoelace with his relationship with others.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '965esrkarckkhbd9',
+        title: 'Realization - Hindi Drama Short Film',
+        overview: "On a day-to-day basis, we shy away from verbally sharing our love with our dads as we end up taking this relationship for granted. Then we spend our lives repenting for that one moment when we could have hugged them and told them how much we loved them.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '9a30rjdvt516mhzp',
+        title: 'Equation - Hindi Drama Short Film',
+        overview: "Prof. Raman Srinivasan writes a letter to Dr. PK Indurkar, a great mathematician, in the hope of getting an answer to an equation that he hasn't solved despite repeated attempts. In reality, there is a group of people who writes books in the name of Dr. PK Indurkar. No one exists with that name. Srinivasan has already sent a no. of emails and letters to the mathematician but in vain. Unable to answer all the letters, they publish a public obituary stating the demise of Dr. PK Indurkar.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      }
+    ]
   },
   {
     heading: 'Only on EthFlix',
-    endpoint: '/api/discover?type=tv',
-    defaultCard: false
+    movies: [
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: 'a566grl1x9i2ad0e',
+        title: 'Feeta - Hindi drama short film',
+        overview: "Feeta is a story of three siblings. An elder sister and two younger brothers. One day while getting ready for school, one of the brothers makes fun of the other that he doesn't know how to tie the shoelace and their sister listens to the whole conversation between them, then she teaches the lesson to the elder brother by comparing the shoelace with his relationship with others.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '965esrkarckkhbd9',
+        title: 'Realization - Hindi Drama Short Film',
+        overview: "On a day-to-day basis, we shy away from verbally sharing our love with our dads as we end up taking this relationship for granted. Then we spend our lives repenting for that one moment when we could have hugged them and told them how much we loved them.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '9a30rjdvt516mhzp',
+        title: 'Equation - Hindi Drama Short Film',
+        overview: "Prof. Raman Srinivasan writes a letter to Dr. PK Indurkar, a great mathematician, in the hope of getting an answer to an equation that he hasn't solved despite repeated attempts. In reality, there is a group of people who writes books in the name of Dr. PK Indurkar. No one exists with that name. Srinivasan has already sent a no. of emails and letters to the mathematician but in vain. Unable to answer all the letters, they publish a public obituary stating the demise of Dr. PK Indurkar.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      }
+    ]
   },
   {
     heading: 'Trending Now',
-    endpoint: '/api/trending?type=movie&time=week'
+    movies: [
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: 'a566grl1x9i2ad0e',
+        title: 'Feeta - Hindi drama short film',
+        overview: "Feeta is a story of three siblings. An elder sister and two younger brothers. One day while getting ready for school, one of the brothers makes fun of the other that he doesn't know how to tie the shoelace and their sister listens to the whole conversation between them, then she teaches the lesson to the elder brother by comparing the shoelace with his relationship with others.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '965esrkarckkhbd9',
+        title: 'Realization - Hindi Drama Short Film',
+        overview: "On a day-to-day basis, we shy away from verbally sharing our love with our dads as we end up taking this relationship for granted. Then we spend our lives repenting for that one moment when we could have hugged them and told them how much we loved them.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '9a30rjdvt516mhzp',
+        title: 'Equation - Hindi Drama Short Film',
+        overview: "Prof. Raman Srinivasan writes a letter to Dr. PK Indurkar, a great mathematician, in the hope of getting an answer to an equation that he hasn't solved despite repeated attempts. In reality, there is a group of people who writes books in the name of Dr. PK Indurkar. No one exists with that name. Srinivasan has already sent a no. of emails and letters to the mathematician but in vain. Unable to answer all the letters, they publish a public obituary stating the demise of Dr. PK Indurkar.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      }
+    ]
   },
   {
     heading: 'Comedies',
-    endpoint: '/api/discover?type=movie&genre=35'
+    movies: [
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: 'a566grl1x9i2ad0e',
+        title: 'Feeta - Hindi drama short film',
+        overview: "Feeta is a story of three siblings. An elder sister and two younger brothers. One day while getting ready for school, one of the brothers makes fun of the other that he doesn't know how to tie the shoelace and their sister listens to the whole conversation between them, then she teaches the lesson to the elder brother by comparing the shoelace with his relationship with others.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '965esrkarckkhbd9',
+        title: 'Realization - Hindi Drama Short Film',
+        overview: "On a day-to-day basis, we shy away from verbally sharing our love with our dads as we end up taking this relationship for granted. Then we spend our lives repenting for that one moment when we could have hugged them and told them how much we loved them.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '9a30rjdvt516mhzp',
+        title: 'Equation - Hindi Drama Short Film',
+        overview: "Prof. Raman Srinivasan writes a letter to Dr. PK Indurkar, a great mathematician, in the hope of getting an answer to an equation that he hasn't solved despite repeated attempts. In reality, there is a group of people who writes books in the name of Dr. PK Indurkar. No one exists with that name. Srinivasan has already sent a no. of emails and letters to the mathematician but in vain. Unable to answer all the letters, they publish a public obituary stating the demise of Dr. PK Indurkar.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      }
+    ]
   },
   {
     heading: 'Top 10 in US Today',
-    endpoint: '/api/trending?type=tv&time=day',
+    movies: [
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: 'a566grl1x9i2ad0e',
+        title: 'Feeta - Hindi drama short film',
+        overview: "Feeta is a story of three siblings. An elder sister and two younger brothers. One day while getting ready for school, one of the brothers makes fun of the other that he doesn't know how to tie the shoelace and their sister listens to the whole conversation between them, then she teaches the lesson to the elder brother by comparing the shoelace with his relationship with others.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '965esrkarckkhbd9',
+        title: 'Realization - Hindi Drama Short Film',
+        overview: "On a day-to-day basis, we shy away from verbally sharing our love with our dads as we end up taking this relationship for granted. Then we spend our lives repenting for that one moment when we could have hugged them and told them how much we loved them.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '9a30rjdvt516mhzp',
+        title: 'Equation - Hindi Drama Short Film',
+        overview: "Prof. Raman Srinivasan writes a letter to Dr. PK Indurkar, a great mathematician, in the hope of getting an answer to an equation that he hasn't solved despite repeated attempts. In reality, there is a group of people who writes books in the name of Dr. PK Indurkar. No one exists with that name. Srinivasan has already sent a no. of emails and letters to the mathematician but in vain. Unable to answer all the letters, they publish a public obituary stating the demise of Dr. PK Indurkar.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      }
+    ],
     topList: true
   },
   {
     heading: 'Action',
-    endpoint: '/api/discover?type=movie&genre=28'
+    movies: [
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: 'a566grl1x9i2ad0e',
+        title: 'Feeta - Hindi drama short film',
+        overview: "Feeta is a story of three siblings. An elder sister and two younger brothers. One day while getting ready for school, one of the brothers makes fun of the other that he doesn't know how to tie the shoelace and their sister listens to the whole conversation between them, then she teaches the lesson to the elder brother by comparing the shoelace with his relationship with others.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '965esrkarckkhbd9',
+        title: 'Realization - Hindi Drama Short Film',
+        overview: "On a day-to-day basis, we shy away from verbally sharing our love with our dads as we end up taking this relationship for granted. Then we spend our lives repenting for that one moment when we could have hugged them and told them how much we loved them.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '9a30rjdvt516mhzp',
+        title: 'Equation - Hindi Drama Short Film',
+        overview: "Prof. Raman Srinivasan writes a letter to Dr. PK Indurkar, a great mathematician, in the hope of getting an answer to an equation that he hasn't solved despite repeated attempts. In reality, there is a group of people who writes books in the name of Dr. PK Indurkar. No one exists with that name. Srinivasan has already sent a no. of emails and letters to the mathematician but in vain. Unable to answer all the letters, they publish a public obituary stating the demise of Dr. PK Indurkar.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      }
+    ]
   },
   {
     heading: 'TV Sci-Fi and Horror',
-    endpoint: '/api/discover?type=tv&genre=10765'
+    movies: [
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: 'a566grl1x9i2ad0e',
+        title: 'Feeta - Hindi drama short film',
+        overview: "Feeta is a story of three siblings. An elder sister and two younger brothers. One day while getting ready for school, one of the brothers makes fun of the other that he doesn't know how to tie the shoelace and their sister listens to the whole conversation between them, then she teaches the lesson to the elder brother by comparing the shoelace with his relationship with others.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '965esrkarckkhbd9',
+        title: 'Realization - Hindi Drama Short Film',
+        overview: "On a day-to-day basis, we shy away from verbally sharing our love with our dads as we end up taking this relationship for granted. Then we spend our lives repenting for that one moment when we could have hugged them and told them how much we loved them.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '9a30rjdvt516mhzp',
+        title: 'Equation - Hindi Drama Short Film',
+        overview: "Prof. Raman Srinivasan writes a letter to Dr. PK Indurkar, a great mathematician, in the hope of getting an answer to an equation that he hasn't solved despite repeated attempts. In reality, there is a group of people who writes books in the name of Dr. PK Indurkar. No one exists with that name. Srinivasan has already sent a no. of emails and letters to the mathematician but in vain. Unable to answer all the letters, they publish a public obituary stating the demise of Dr. PK Indurkar.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      }
+    ]
   },
   {
     heading: 'Mystery Movies',
-    endpoint: '/api/discover?type=movie&genre=9648'
+    movies: [
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: 'a566grl1x9i2ad0e',
+        title: 'Feeta - Hindi drama short film',
+        overview: "Feeta is a story of three siblings. An elder sister and two younger brothers. One day while getting ready for school, one of the brothers makes fun of the other that he doesn't know how to tie the shoelace and their sister listens to the whole conversation between them, then she teaches the lesson to the elder brother by comparing the shoelace with his relationship with others.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '965esrkarckkhbd9',
+        title: 'Realization - Hindi Drama Short Film',
+        overview: "On a day-to-day basis, we shy away from verbally sharing our love with our dads as we end up taking this relationship for granted. Then we spend our lives repenting for that one moment when we could have hugged them and told them how much we loved them.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '9a30rjdvt516mhzp',
+        title: 'Equation - Hindi Drama Short Film',
+        overview: "Prof. Raman Srinivasan writes a letter to Dr. PK Indurkar, a great mathematician, in the hope of getting an answer to an equation that he hasn't solved despite repeated attempts. In reality, there is a group of people who writes books in the name of Dr. PK Indurkar. No one exists with that name. Srinivasan has already sent a no. of emails and letters to the mathematician but in vain. Unable to answer all the letters, they publish a public obituary stating the demise of Dr. PK Indurkar.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      }
+    ]
   },
   {
     heading: 'Animation',
-    endpoint: '/api/discover?type=tv&genre=16'
+    movies: [
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: 'a566grl1x9i2ad0e',
+        title: 'Feeta - Hindi drama short film',
+        overview: "Feeta is a story of three siblings. An elder sister and two younger brothers. One day while getting ready for school, one of the brothers makes fun of the other that he doesn't know how to tie the shoelace and their sister listens to the whole conversation between them, then she teaches the lesson to the elder brother by comparing the shoelace with his relationship with others.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '965esrkarckkhbd9',
+        title: 'Realization - Hindi Drama Short Film',
+        overview: "On a day-to-day basis, we shy away from verbally sharing our love with our dads as we end up taking this relationship for granted. Then we spend our lives repenting for that one moment when we could have hugged them and told them how much we loved them.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '9a30rjdvt516mhzp',
+        title: 'Equation - Hindi Drama Short Film',
+        overview: "Prof. Raman Srinivasan writes a letter to Dr. PK Indurkar, a great mathematician, in the hope of getting an answer to an equation that he hasn't solved despite repeated attempts. In reality, there is a group of people who writes books in the name of Dr. PK Indurkar. No one exists with that name. Srinivasan has already sent a no. of emails and letters to the mathematician but in vain. Unable to answer all the letters, they publish a public obituary stating the demise of Dr. PK Indurkar.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      }
+    ]
   },
   {
     heading: 'Drama',
-    endpoint: '/api/discover?type=movie&genre=18'
+    movies: [
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: 'a566grl1x9i2ad0e',
+        title: 'Feeta - Hindi drama short film',
+        overview: "Feeta is a story of three siblings. An elder sister and two younger brothers. One day while getting ready for school, one of the brothers makes fun of the other that he doesn't know how to tie the shoelace and their sister listens to the whole conversation between them, then she teaches the lesson to the elder brother by comparing the shoelace with his relationship with others.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '965esrkarckkhbd9',
+        title: 'Realization - Hindi Drama Short Film',
+        overview: "On a day-to-day basis, we shy away from verbally sharing our love with our dads as we end up taking this relationship for granted. Then we spend our lives repenting for that one moment when we could have hugged them and told them how much we loved them.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '9a30rjdvt516mhzp',
+        title: 'Equation - Hindi Drama Short Film',
+        overview: "Prof. Raman Srinivasan writes a letter to Dr. PK Indurkar, a great mathematician, in the hope of getting an answer to an equation that he hasn't solved despite repeated attempts. In reality, there is a group of people who writes books in the name of Dr. PK Indurkar. No one exists with that name. Srinivasan has already sent a no. of emails and letters to the mathematician but in vain. Unable to answer all the letters, they publish a public obituary stating the demise of Dr. PK Indurkar.",
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      },
+      {
+        id: '962e87lox6jtlvgn',
+        title: 'Marathi Short Film - Ranati',
+        overview: 'This epidemic of humanity, which has gone from human to human, started appearing in the human mind again. This is a story about a subject.',
+        poster: 'https://api.lorem.space/image/movie?w=420&h=190',
+        banner: 'https://api.lorem.space/image/movie?w=420&h=420',
+        rating: 3,
+        genre: [
+          {
+            id: 1,
+            name: 'Short Movies'
+          }
+        ]
+      }
+    ]
   }
 ];
