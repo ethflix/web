@@ -27,6 +27,7 @@ export enum MediaType {
 
 export type Media = {
   id: string;
+  playbackId?: string;
   title: string;
   overview: string;
   poster: string;
