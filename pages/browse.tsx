@@ -1,10 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import dynamic from 'next/dynamic';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { NextRouter, useRouter } from 'next/router';
 
 import { ModalContext } from '../context/ModalContext';
 import styles from '../styles/Browse.module.scss';
 import { Section } from '../types';
+import { ROUTES } from '../config/route';
+import { useWeb3 } from '../context/Web3ModalContext';
 
 const List = dynamic(import('../components/List'));
 const Modal = dynamic(import('../components/Modal'));
@@ -12,7 +15,19 @@ const Layout = dynamic(import('../components/Layout'));
 const Banner = dynamic(import('../components/Banner'));
 
 export default function Browse(): React.ReactElement {
+  const web3 = useWeb3();
+  const router: NextRouter = useRouter();
   const { isModal } = useContext(ModalContext);
+
+  useEffect(() => {
+    const accessToken = localStorage.getItem('access_token');
+    const accessTokenExpiry = Number(localStorage.getItem('access_token_expires_at'));
+    const now = Date.now();
+    if (!accessToken || accessToken.length === 0 || now > accessTokenExpiry) {
+      router.push(ROUTES.HOME);
+    }
+  }, []);
+
   return (
     <>
       {isModal && <Modal />}

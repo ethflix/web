@@ -48,6 +48,7 @@ export default function Home(): React.ReactElement {
       signature
     });
     localStorage.setItem('access_token', accessTokenRequest.data.token);
+    localStorage.setItem('access_token_expires_at', accessTokenRequest.data.expires_at);
     router.push(ROUTES.BROWSE);
   }
 

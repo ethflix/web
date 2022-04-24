@@ -21,7 +21,11 @@ export default function Profile(): React.ReactElement {
 
   const onClose = (): void => setVisible(false);
 
-  const onSignout = (): Promise<boolean> => router.push(ROUTES.HOME);
+  const onSignout = (): Promise<boolean> => {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('access_token_expires_at');
+    return router.push(ROUTES.HOME);
+  }
 
   const caretAnimation = {
     animate: visible ? 'up' : 'down',
