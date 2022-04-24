@@ -3,11 +3,16 @@ import { NextRouter, useRouter } from 'next/router';
 import VREPlayer from 'videojs-react-enhanced';
 import 'video.js/dist/video-js.css';
 
+import { Media } from '../../types';
 import styles from '../../styles/Browse.module.scss';
 import { ROUTES } from '../../config/route';
 import LPApiClient from '../../utils/axios';
 
-function Watch({ media }): React.ReactElement {
+type WatchProps = {
+  media: Media;
+};
+
+function Watch({ media }: WatchProps): React.ReactElement {
   const router: NextRouter = useRouter();
 
   const playerOptions: VREPlayer.IPlayerOptions = {
